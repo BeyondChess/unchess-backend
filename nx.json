@@ -8,7 +8,9 @@
     "production": [
       "default"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ]
   },
   "nxCloudAccessToken": "ODMwNzA1NzAtMTcwZC00ZTViLTk1YzctNjY4ZDg2ZDkxMzcxfHJlYWQtd3JpdGU="
 }
