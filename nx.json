@@ -9,8 +9,12 @@
       "default"
     ],
     "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
+      "{workspaceRoot}/.github/workflows/ci.yml",
+      "{workspaceRoot}/go.work"
     ]
   },
-  "nxCloudAccessToken": "ODMwNzA1NzAtMTcwZC00ZTViLTk1YzctNjY4ZDg2ZDkxMzcxfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ODMwNzA1NzAtMTcwZC00ZTViLTk1YzctNjY4ZDg2ZDkxMzcxfHJlYWQtd3JpdGU=",
+  "plugins": [
+    "@nx-go/nx-go"
+  ]
 }

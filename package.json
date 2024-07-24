@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@nx-go/nx-go": "^3.2.0"
+  },
   "devDependencies": {
     "@nx/js": "19.5.2",
     "@nx/workspace": "19.5.2",
