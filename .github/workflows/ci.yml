@@ -21,31 +21,14 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Check if Nx Cloud secret exists
-        run: |
-          if [ -z "${{ secrets.NX_CLOUD_ACCESS_TOKEN }}" ]; then
-            echo "Nx Cloud secret has not been set. Please go to 'Settings > Secrets > Actions' to create it."
-            exit 1
-          else
-            echo "Nx Cloud secret is set."
-          fi
+      - name: Nx cloud ci run 
+        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Nx Cloud - Start CI Run
-        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
-        env:
-          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-          NX_BRANCH: ${{ github.ref }}
-          NX_RUN_GROUP: ${{ github.run_id }}
-
       - name: Run all tests
         run: npx nx run-many --target=test --all --parallel
-        env:
-          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
+  
       - name: Nx Cloud - Complete CI Run
-        run: npx nx-cloud complete-ci-run --workflow-file .github/workflows/ci.yml
-        env:
-          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+        run: npx nx-cloud complete-ci-run 
