@@ -1,5 +1,8 @@
-go 1.22
+go 1.22.3
 
 use (
 	./apps/auth
+	./apps/api-gateway
+	./apps/game-service
+	./apps/notification-service
 )
