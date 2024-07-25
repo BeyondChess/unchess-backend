@@ -8,6 +8,7 @@
     "@nx-go/nx-go": "^3.2.0"
   },
   "devDependencies": {
+    "@nrwl/nx-cloud": "^19.0.0",
     "@nx/js": "19.5.2",
     "@nx/workspace": "19.5.2",
     "nx": "19.5.2"
