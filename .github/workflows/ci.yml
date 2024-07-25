@@ -8,12 +8,8 @@ on:
     branches:
       - main
 
-permissions:
-  actions: read
-  contents: read
-
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,5 +36,5 @@ jobs:
         env:
           NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
-      - name: Nx Cloud - Stop CI Run
-        run: npx nx-cloud stop-ci-run
+      - name: Nx Cloud - Complete CI Run
+        run: npx nx-cloud complete-ci-run
