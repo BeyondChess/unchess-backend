@@ -22,13 +22,13 @@ func NewServer() *http.Server {
 	key := os.Getenv("GCP_KEY") // your client secret
 	clientKey := os.Getenv("GCP_CLIENT_KEY")
 	maxAge := 86400 * 30 // 30 days
-	isProd := true       // Set to true when serving over https
+	//isProd := true       // Set to true when serving over https
 
 	store := sessions.NewCookieStore([]byte(key))
 	store.MaxAge(maxAge)
 	store.Options.Path = "/"
 	store.Options.HttpOnly = true // HttpOnly should always be enabled
-	store.Options.Secure = isProd
+	store.Options.Secure = true
 
 	gothic.Store = store
 	goth.UseProviders(
